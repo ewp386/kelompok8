@@ -1,16 +1,24 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Tambah Gudang
+            Tambah Session
         </h2>
     </x-slot>
 
     <div>
         <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="mt-5 md:mt-0 md:col-span-2">
-                <form method="post" action="{{ route('gudang.store') }}">
+                <form method="post" action="{{ route('session.store') }}">
                     @csrf
                     <div class="shadow overflow-hidden sm:rounded-md">
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="id" class="block font-medium text-sm text-gray-700">ID</label>
+                            <input type="text" name="id" id="id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('id', '') }}" />
+                            @error('id')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="user_id" class="block font-medium text-sm text-gray-700">ID USER</label>
                             <input type="text" name="user_id" id="user_id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
@@ -20,30 +28,38 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_product" class="block font-medium text-sm text-gray-700">ID Product</label>
-                            <input type="text" name="id_product" id="id_product" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_product', '') }}" />
-                            @error('id_product')
+                            <label for="ip_address" class="block font-medium text-sm text-gray-700">IP Address</label>
+                            <input type="text" name="ip_address" id="ip_address" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('ip_address', '') }}" />
+                            @error('ip_address')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_transaksi" class="block font-medium text-sm text-gray-700">ID Transaksi</label>
-                            <input type="text" name="id_transaksi" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_transaksi', '') }}" />
-                            @error('id_transaksi')
+                            <label for="user_agent" class="block font-medium text-sm text-gray-700">User Agent</label>
+                            <input type="text" name="user_agent" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('user_agent', '') }}" />
+                            @error('user_agent')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="quantity" class="block font-medium text-sm text-gray-700">Quantity</label>
-                            <input type="text" name="quantity" id="quantity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('quantity', '') }}" />
-                            @error('quantity')
+                            <label for="payload" class="block font-medium text-sm text-gray-700">Payload</label>
+                            <input type="text" name="payload" id="payload" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('payload', '') }}" />
+                            @error('payload')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
-                        
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="last_activity" class="block font-medium text-sm text-gray-700">Last Activity</label>
+                            <input type="text" name="last_activity" id="last_activity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('last_activity', '') }}" />
+                            @error('last_activity')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
                         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
                                 Create
@@ -54,5 +70,5 @@
             </div>
         </div>
     </div>
-    
+
 </x-app-layout>

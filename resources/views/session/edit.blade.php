@@ -1,46 +1,62 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Edit Gudang
+            Edit Session
         </h2>
     </x-slot>
 
     <div>
         <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="mt-5 md:mt-0 md:col-span-2">
-                <form method="post" action="{{ route('gudang.update', $gudang->id) }}">
+                <form method="post" action="{{ route('session.update', $session->id) }}">
                     @csrf
                     @method('PUT')
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="id" class="block font-medium text-sm text-gray-700">ID</label>
+                            <input type="text" name="id" id="id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('id', $session->id) }}" />
+                            @error('id')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="user_id" class="block font-medium text-sm text-gray-700">ID User</label>
                             <input type="text" name="user_id" id="user_id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('user_id', $gudang->user_id) }}" />
+                                   value="{{ old('user_id', $session->user_id) }}" />
                             @error('user_id')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_product" class="block font-medium text-sm text-gray-700">ID Product</label>
-                            <input type="text" name="id_product" id="id_product" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_product', $gudang->id_product) }}" />
-                            @error('id_product')
+                            <label for="ip_address" class="block font-medium text-sm text-gray-700">IP Address</label>
+                            <input type="text" name="ip_address" id="ip_address" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('ip_address', $session->ip_address) }}" />
+                            @error('ip_address')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_transaksi" class="block font-medium text-sm text-gray-700">ID Transaksi</label>
-                            <input type="text" name="id_transaksi" id="id_transaksi" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_transaksi', $gudang->id_transaksi) }}" />
-                            @error('id_transaksi')
+                            <label for="user_agent" class="block font-medium text-sm text-gray-700">User Agent</label>
+                            <input type="text" name="user_agent" id="user_agent" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('user_agent', $session->user_agent) }}" />
+                            @error('user_agent')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="quantity" class="block font-medium text-sm text-gray-700">Quantity</label>
-                            <input type="text" name="quantity" id="quantity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('quantity', $gudang->user_id) }}" />
-                            @error('quantity')
+                            <label for="payload" class="block font-medium text-sm text-gray-700">Payload</label>
+                            <input type="text" name="payload" id="payload" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('payload', $session->payload) }}" />
+                            @error('payload')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="last_activity" class="block font-medium text-sm text-gray-700">Last Activity</label>
+                            <input type="text" name="last_activity" id="last_activity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('last_activity', $session->last_activity) }}" />
+                            @error('last_activity')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

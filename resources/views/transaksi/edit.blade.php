@@ -29,26 +29,42 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_barang" class="block font-medium text-sm text-gray-700">ID Barang</label>
-                            <input type="text" name="id_barang" id="id_barang" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_barang', $transaksi->id_barang) }}" />
-                            @error('id_barang')
+                            <label for="alamat" class="block font-medium text-sm text-gray-700">Alamat</label>
+                            <input type="text" name="alamat" id="alamat" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('alamat', $transaksi->alamat) }}" />
+                            @error('alamat')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_transaksi" class="block font-medium text-sm text-gray-700">ID Transaksi</label>
-                            <input type="text" name="id_transaksi" id="id_transaksi" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_transaksi', $transaksi->id_transaksi) }}" />
-                            @error('id_transaksi')
+                            <label for="pembayaran" class="block font-medium text-sm text-gray-700">Pembayaran</label>
+                            <input type="text" name="pembayaran" id="pembayaran" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('pembayaran', $transaksi->pembayaran) }}" />
+                            @error('pembayaran')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="quantity" class="block font-medium text-sm text-gray-700">Quantity</label>
-                            <input type="text" name="quantity" id="quantity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('quantity', $transaksi->user_id) }}" />
-                            @error('quantity')
+                            <label for="total_harga" class="block font-medium text-sm text-gray-700">Total Harga</label>
+                            <input type="text" name="total_harga" id="total_harga" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('total_harga', $transaksi->total_harga) }}" />
+                            @error('total_harga')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="shipping_harga" class="block font-medium text-sm text-gray-700">Shipping Harga</label>
+                            <input type="text" name="shipping_harga" id="shipping_harga" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('shipping_harga', $transaksi->shipping_harga) }}" />
+                            @error('shipping_harga')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="status" class="block font-medium text-sm text-gray-700">Status</label>
+                            <input type="text" name="status" id="status" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('status', $transaksi->status) }}" />
+                            @error('status')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
