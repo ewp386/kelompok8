@@ -1,46 +1,62 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Edit Gudang
+            Edit Order
         </h2>
     </x-slot>
 
     <div>
         <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="mt-5 md:mt-0 md:col-span-2">
-                <form method="post" action="{{ route('gudang.update', $gudang->id) }}">
+                <form method="post" action="{{ route('order.update', $order->id) }}">
                     @csrf
                     @method('PUT')
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="user_id" class="block font-medium text-sm text-gray-700">ID User</label>
                             <input type="text" name="user_id" id="user_id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('user_id', $gudang->user_id) }}" />
+                                   value="{{ old('user_id', $order->user_id) }}" />
                             @error('user_id')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_product" class="block font-medium text-sm text-gray-700">ID Product</label>
-                            <input type="text" name="id_product" id="id_product" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_product', $gudang->id_product) }}" />
-                            @error('id_product')
+                            <label for="id_supplier" class="block font-medium text-sm text-gray-700">ID Supplier</label>
+                            <input type="text" name="id_supplier" id="id_supplier" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('id_supplier', $order->id_supplier) }}" />
+                            @error('id_supplier')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_transaksi" class="block font-medium text-sm text-gray-700">ID Transaksi</label>
-                            <input type="text" name="id_transaksi" id="id_transaksi" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_transaksi', $gudang->id_transaksi) }}" />
-                            @error('id_transaksi')
+                            <label for="date" class="block font-medium text-sm text-gray-700">Date</label>
+                            <input type="text" name="date" id="date" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('date', $order->date) }}" />
+                            @error('date')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="quantity" class="block font-medium text-sm text-gray-700">Quantity</label>
-                            <input type="text" name="quantity" id="quantity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('quantity', $gudang->user_id) }}" />
-                            @error('quantity')
+                            <label for="approved" class="block font-medium text-sm text-gray-700">Approved</label>
+                            <input type="text" name="approved" id="approved" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('approved', $order->approved) }}" />
+                            @error('approved')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="status" class="block font-medium text-sm text-gray-700">Status</label>
+                            <input type="text" name="status" id="status" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('status', $order->status) }}" />
+                            @error('status')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="total_harga" class="block font-medium text-sm text-gray-700">Total Harga</label>
+                            <input type="text" name="total_harga" id="total_harga" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('total_harga', $order->total_harga) }}" />
+                            @error('total_harga')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

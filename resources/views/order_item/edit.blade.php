@@ -21,18 +21,18 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_product" class="block font-medium text-sm text-gray-700">ID Product</label>
-                            <input type="text" name="id_product" id="id_product" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_product', $gudang->id_product) }}" />
-                            @error('id_product')
+                            <label for="id_order" class="block font-medium text-sm text-gray-700">ID Order</label>
+                            <input type="text" name="id_order" id="id_order" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('id_order', $gudang->id_order) }}" />
+                            @error('id_order')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_transaksi" class="block font-medium text-sm text-gray-700">ID Transaksi</label>
-                            <input type="text" name="id_transaksi" id="id_transaksi" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_transaksi', $gudang->id_transaksi) }}" />
-                            @error('id_transaksi')
+                            <label for="id_barang" class="block font-medium text-sm text-gray-700">ID Barang</label>
+                            <input type="text" name="id_barang" id="id_barang" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('id_barang', $gudang->id_barang) }}" />
+                            @error('id_barang')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
