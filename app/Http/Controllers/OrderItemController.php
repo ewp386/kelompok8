@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreOrderItemRequest;
+use App\Http\Requests\UpdateOrderItemRequest;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,9 @@ class OrderItemController extends Controller
      */
     public function index()
     {
-        //
+        $orderItem = OrderItem::all();
+
+        return view('orderItem .index', compact('orderItem '));
     }
 
     /**
@@ -24,7 +28,7 @@ class OrderItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('orderItem .create');
     }
 
     /**
@@ -33,9 +37,11 @@ class OrderItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreOrderItemRequest $request)
     {
-        //
+
+        OrderItem::create($request->all());
+        return redirect()->route('orderItem .index');
     }
 
     /**
@@ -44,9 +50,9 @@ class OrderItemController extends Controller
      * @param  \App\Models\OrderItem  $orderItem
      * @return \Illuminate\Http\Response
      */
-    public function show(OrderItem $orderItem)
+    public function show(OrderItem $orderItem )
     {
-        //
+        return view('orderItem .show', compact('orderItem '));
     }
 
     /**
@@ -55,9 +61,9 @@ class OrderItemController extends Controller
      * @param  \App\Models\OrderItem  $orderItem
      * @return \Illuminate\Http\Response
      */
-    public function edit(OrderItem $orderItem)
+    public function edit(OrderItem $orderItem )
     {
-        //
+        return view('orderItem .edit', compact('orderItem '));
     }
 
     /**
@@ -67,9 +73,10 @@ class OrderItemController extends Controller
      * @param  \App\Models\OrderItem  $orderItem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OrderItem $orderItem)
+    public function update(UpdateOrderItemRequest $request, OrderItem $orderItem )
     {
-        //
+        $orderItem ->update($request->all());
+        return redirect()->route('orderItem .index');
     }
 
     /**
@@ -78,8 +85,9 @@ class OrderItemController extends Controller
      * @param  \App\Models\OrderItem  $orderItem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OrderItem $orderItem)
+    public function destroy(OrderItem $orderItem )
     {
-        //
+        $orderItem ->delete();
+        return redirect()->route('orderItem .index');
     }
 }

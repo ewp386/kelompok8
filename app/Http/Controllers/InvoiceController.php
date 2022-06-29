@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreInvoiceRequest;
+use App\Http\Requests\UpdateInvoiceRequest;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,9 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        //
+        $invoice = Invoice::all();
+
+        return view('invoice.index', compact('invoice'));
     }
 
     /**
@@ -24,7 +28,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('invoice.create');
     }
 
     /**
@@ -33,9 +37,11 @@ class InvoiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreInvoiceRequest $request)
     {
-        //
+
+        Invoice::create($request->all());
+        return redirect()->route('invoice.index');
     }
 
     /**
@@ -46,7 +52,7 @@ class InvoiceController extends Controller
      */
     public function show(Invoice $invoice)
     {
-        //
+        return view('invoice.show', compact('invoice'));
     }
 
     /**
@@ -57,7 +63,7 @@ class InvoiceController extends Controller
      */
     public function edit(Invoice $invoice)
     {
-        //
+        return view('invoice.edit', compact('invoice'));
     }
 
     /**
@@ -67,9 +73,10 @@ class InvoiceController extends Controller
      * @param  \App\Models\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Invoice $invoice)
+    public function update(UpdateInvoiceRequest $request, Invoice $invoice)
     {
-        //
+        $invoice->update($request->all());
+        return redirect()->route('invoice.index');
     }
 
     /**
@@ -80,6 +87,7 @@ class InvoiceController extends Controller
      */
     public function destroy(Invoice $invoice)
     {
-        //
+        $invoice->delete();
+        return redirect()->route('invoice.index');
     }
 }

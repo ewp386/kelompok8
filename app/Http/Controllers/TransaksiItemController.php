@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTransaksiItemRequest;
+use App\Http\Requests\UpdateTransaksiItemRequest;
 use App\Models\TransaksiItem;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,9 @@ class TransaksiItemController extends Controller
      */
     public function index()
     {
-        //
+        $transaksiItem = TransaksiItem::all();
+
+        return view('transaksiItem.index', compact('transaksiItem'));
     }
 
     /**
@@ -24,7 +28,7 @@ class TransaksiItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('transaksiItem.create');
     }
 
     /**
@@ -33,9 +37,11 @@ class TransaksiItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTransaksiItemRequest $request)
     {
-        //
+
+        TransaksiItem::create($request->all());
+        return redirect()->route('transaksiItem.index');
     }
 
     /**
@@ -46,7 +52,7 @@ class TransaksiItemController extends Controller
      */
     public function show(TransaksiItem $transaksiItem)
     {
-        //
+        return view('transaksiItem.show', compact('transaksiItem'));
     }
 
     /**
@@ -57,7 +63,7 @@ class TransaksiItemController extends Controller
      */
     public function edit(TransaksiItem $transaksiItem)
     {
-        //
+        return view('transaksiItem.edit', compact('transaksiItem'));
     }
 
     /**
@@ -67,9 +73,10 @@ class TransaksiItemController extends Controller
      * @param  \App\Models\TransaksiItem  $transaksiItem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TransaksiItem $transaksiItem)
+    public function update(UpdateTransaksiItemRequest $request, TransaksiItem $transaksiItem)
     {
-        //
+        $transaksiItem->update($request->all());
+        return redirect()->route('transaksiItem.index');
     }
 
     /**
@@ -80,6 +87,7 @@ class TransaksiItemController extends Controller
      */
     public function destroy(TransaksiItem $transaksiItem)
     {
-        //
+        $transaksiItem->delete();
+        return redirect()->route('transaksiItem.index');
     }
 }

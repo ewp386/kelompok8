@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreManufakturRequest;
+use App\Http\Requests\UpdateManufakturRequest;
 use App\Models\Manufaktur;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,9 @@ class ManufakturController extends Controller
      */
     public function index()
     {
-        //
+        $manufaktur= Manufaktur::all();
+
+        return view('manufaktur.index', compact('manufaktur'));
     }
 
     /**
@@ -24,7 +28,7 @@ class ManufakturController extends Controller
      */
     public function create()
     {
-        //
+        return view('manufaktur.create');
     }
 
     /**
@@ -33,9 +37,11 @@ class ManufakturController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreManufakturRequest $request)
     {
-        //
+
+        Manufaktur::create($request->all());
+        return redirect()->route('manufaktur.index');
     }
 
     /**
@@ -46,7 +52,7 @@ class ManufakturController extends Controller
      */
     public function show(Manufaktur $manufaktur)
     {
-        //
+        return view('manufaktur.show', compact('manufaktur'));
     }
 
     /**
@@ -57,7 +63,7 @@ class ManufakturController extends Controller
      */
     public function edit(Manufaktur $manufaktur)
     {
-        //
+        return view('manufaktur.edit', compact('manufaktur'));
     }
 
     /**
@@ -67,9 +73,10 @@ class ManufakturController extends Controller
      * @param  \App\Models\Manufaktur  $manufaktur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Manufaktur $manufaktur)
+    public function update(UpdateManufakturRequest $request, Manufaktur $manufaktur)
     {
-        //
+        $manufaktur->update($request->all());
+        return redirect()->route('manufaktur.index');
     }
 
     /**
@@ -80,6 +87,7 @@ class ManufakturController extends Controller
      */
     public function destroy(Manufaktur $manufaktur)
     {
-        //
+        $manufaktur->delete();
+        return redirect()->route('manufaktur.index');
     }
 }

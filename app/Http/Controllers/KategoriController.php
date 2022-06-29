@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreKategoriRequest;
+use App\Http\Requests\UpdateKategoriRequest;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,9 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        //
+        $kategori = Kategori::all();
+
+        return view('kategori.index', compact('kategori'));
     }
 
     /**
@@ -24,7 +28,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('kategori.create');
     }
 
     /**
@@ -33,9 +37,11 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreKategoriRequest $request)
     {
-        //
+
+        Kategori::create($request->all());
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -46,7 +52,7 @@ class KategoriController extends Controller
      */
     public function show(Kategori $kategori)
     {
-        //
+        return view('kategori.show', compact('kategori'));
     }
 
     /**
@@ -57,7 +63,7 @@ class KategoriController extends Controller
      */
     public function edit(Kategori $kategori)
     {
-        //
+        return view('kategori.edit', compact('kategori'));
     }
 
     /**
@@ -67,9 +73,10 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(UpdateKategoriRequest $request, Kategori $kategori)
     {
-        //
+        $kategori->update($request->all());
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -80,6 +87,7 @@ class KategoriController extends Controller
      */
     public function destroy(Kategori $kategori)
     {
-        //
+        $kategori->delete();
+        return redirect()->route('kategori.index');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRetailRequest;
+use App\Http\Requests\UpdateRetailRequest;
 use App\Models\Retail;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,9 @@ class RetailController extends Controller
      */
     public function index()
     {
-        //
+        $retail = Retail::all();
+
+        return view('retail.index', compact('retail'));
     }
 
     /**
@@ -24,7 +28,7 @@ class RetailController extends Controller
      */
     public function create()
     {
-        //
+        return view('retail.create');
     }
 
     /**
@@ -33,9 +37,11 @@ class RetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRetailRequest $request)
     {
-        //
+
+        Retail::create($request->all());
+        return redirect()->route('retail.index');
     }
 
     /**
@@ -46,7 +52,7 @@ class RetailController extends Controller
      */
     public function show(Retail $retail)
     {
-        //
+        return view('retail.show', compact('retail'));
     }
 
     /**
@@ -57,7 +63,7 @@ class RetailController extends Controller
      */
     public function edit(Retail $retail)
     {
-        //
+        return view('retail.edit', compact('retail'));
     }
 
     /**
@@ -67,9 +73,10 @@ class RetailController extends Controller
      * @param  \App\Models\Retail  $retail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Retail $retail)
+    public function update(UpdateRetailRequest $request, Retail $retail)
     {
-        //
+        $retail->update($request->all());
+        return redirect()->route('retail.index');
     }
 
     /**
@@ -80,6 +87,7 @@ class RetailController extends Controller
      */
     public function destroy(Retail $retail)
     {
-        //
+        $retail->delete();
+        return redirect()->route('retail.index');
     }
 }
