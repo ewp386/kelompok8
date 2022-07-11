@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
+<<<<<<< HEAD
 use App\Models\Retail;
+=======
+>>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
@@ -17,6 +20,7 @@ class TransaksiController extends Controller
      */
     public function index(Request $request)
     {
+<<<<<<< HEAD
         if($request->has('search')){
             $transaksi = Transaksi::where('name','LIKE','%' .$request->search.'%')->with('retail')->paginate(5);
         }else{
@@ -24,6 +28,11 @@ class TransaksiController extends Controller
         }
         
             return view('transaksi.index',compact('transaksi')); 
+=======
+        $transaksi = Transaksi::all();
+
+        return view('transaksi.index', compact('transaksi'));
+>>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
 
     /**
@@ -33,8 +42,12 @@ class TransaksiController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         $retail = Retail::all();
         return view('transaksi.create', compact('retail'));
+=======
+        return view('transaksi.create');
+>>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
 
     /**
@@ -45,7 +58,11 @@ class TransaksiController extends Controller
      */
     public function store(StoreTransaksiRequest $request)
     {
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
         Transaksi::create($request->all());
         return redirect()->route('transaksi.index');
     }
@@ -69,8 +86,12 @@ class TransaksiController extends Controller
      */
     public function edit(Transaksi $transaksi)
     {
+<<<<<<< HEAD
         $retail = Retail::all();
         return view('transaksi.edit', compact(['retail', 'transaksi']));
+=======
+        return view('transaksi.edit', compact('transaksi'));
+>>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
 
     /**

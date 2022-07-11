@@ -1,22 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Tambah Retail
+            Tambah Manufaktur
         </h2>
     </x-slot>
 
     <div>
         <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="mt-5 md:mt-0 md:col-span-2">
-                <form method="post" action="{{ route('retail.store') }}">
+                <form method="post" action="{{ route('manufaktur.store') }}">
                     @csrf
-<<<<<<< HEAD
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_retail" class="block font-medium text-sm text-gray-700">Nama</label>
-                            <input type="text" name="id_retail" id="id_retail" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_retail', '') }}" />
-                            @error('id_retail')
-=======
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="user_id" class="block font-medium text-sm text-gray-700">ID USER</label>
@@ -55,7 +48,6 @@
                             <input type="text" name="role_id" id="role_id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('role_id', '') }}" />
                             @error('role_id')
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -95,8 +87,4 @@
         </div>
     </div>
 
-<<<<<<< HEAD
 </x-app-layout>
-=======
-</x-app-layout>
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633

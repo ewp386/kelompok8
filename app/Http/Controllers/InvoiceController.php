@@ -16,12 +16,18 @@ class InvoiceController extends Controller
      */
     public function index(Request $request)
     {
+<<<<<<< HEAD
         if($request->has('search')){
             $invoice = Invoice::where('nama','LIKE','%' .$request->search.'%')->paginate(5);
         }else{
             $invoice = Invoice::paginate(5);
         }
             return view('invoice.index',compact('invoice')); 
+=======
+        $invoice = Invoice::all();
+
+        return view('invoice.index', compact('invoice'));
+>>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
 
     /**
@@ -42,6 +48,10 @@ class InvoiceController extends Controller
      */
     public function store(StoreInvoiceRequest $request)
     {
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
         Invoice::create($request->all());
         return redirect()->route('invoice.index');
     }
