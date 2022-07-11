@@ -17,7 +17,7 @@ class CreateGudangsTable extends Migration
             $table->id();
             $table->string('id_gudang');
             $table->string('lokasi');
-            $table->bigInteger('quantity');
+            $table->bigInteger('stok');
             $table->timestamps();
             $table->softDeletes();
         });

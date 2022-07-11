@@ -13,7 +13,6 @@
                     @method('PUT')
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
-<<<<<<< HEAD
                             <label for="id_supplier" class="block font-medium text-sm text-gray-700">Supplier</label>
                             <select class="form-control select" style="width: 100%" name="id_supplier" id="id_supplier">
                                 <option disabled value>Pilih Supplier</option>
@@ -21,24 +20,10 @@
                                 <option value="{{ $order->id }}">{{  $order->id_supplier }}</option>                                    
                                 @endforeach
                             </select>
-=======
-                            <label for="user_id" class="block font-medium text-sm text-gray-700">ID User</label>
-                            <input type="text" name="user_id" id="user_id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('user_id', $order->user_id) }}" />
-                            @error('user_id')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_supplier" class="block font-medium text-sm text-gray-700">ID Supplier</label>
-                            <input type="text" name="id_supplier" id="id_supplier" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_supplier', $order->id_supplier) }}" />
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
                             @error('id_supplier')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
-<<<<<<< HEAD
 
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="status" class="block font-medium text-sm text-gray-700">Status</label>
@@ -47,44 +32,15 @@
                                 <option value="Berhasil">Berhasil</option>
                                 <option value="Sedang diproses">Sedang diproses</option>
                             </select>
-=======
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="date" class="block font-medium text-sm text-gray-700">Date</label>
-                            <input type="text" name="date" id="date" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('date', $order->date) }}" />
-                            @error('date')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="approved" class="block font-medium text-sm text-gray-700">Approved</label>
-                            <input type="text" name="approved" id="approved" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('approved', $order->approved) }}" />
-                            @error('approved')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="status" class="block font-medium text-sm text-gray-700">Status</label>
-                            <input type="text" name="status" id="status" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('status', $order->status) }}" />
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
                             @error('status')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-<<<<<<< HEAD
                             <label for="jumlah" class="block font-medium text-sm text-gray-700">Stok</label>
                             <input type="number" name="jumlah" id="jumlah" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('jumlah')?? $order->jumlah }}" />
                             @error('jumlah')
-=======
-                            <label for="total_harga" class="block font-medium text-sm text-gray-700">Total Harga</label>
-                            <input type="text" name="total_harga" id="total_harga" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('total_harga', $order->total_harga) }}" />
-                            @error('total_harga')
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -99,8 +55,4 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
 </x-app-layout>
-=======
-</x-app-layout>
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633

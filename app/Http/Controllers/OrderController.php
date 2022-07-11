@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-=======
 use App\Http\Requests\StoreOrderRequest;
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Order;
 use App\Models\Supplier;
@@ -20,7 +17,6 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-<<<<<<< HEAD
         if($request->has('search')){
             $order = Order::where('name','LIKE','%' .$request->search.'%')->with('supplier')->paginate(5);
         }else{
@@ -28,11 +24,6 @@ class OrderController extends Controller
         }
         
             return view('order.index',compact('order')); 
-=======
-        $order = Order::all();
-
-        return view('order.index', compact('order'));
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
     /**
      * Show the form for creating a new resource.
@@ -41,12 +32,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
         $supplier = Supplier::all();
         return view('order.create', compact('supplier'));
-=======
-        return view('order.create');
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
 
     /**
@@ -57,10 +44,6 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-<<<<<<< HEAD
-=======
-
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
         Order::create($request->all());
         return redirect()->route('order.index');
     }
@@ -84,12 +67,8 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-<<<<<<< HEAD
         $supplier = Supplier::all();;
         return view('order.edit', compact('supplier', 'order'));
-=======
-        return view('order.edit', compact('order'));
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
 
     /**

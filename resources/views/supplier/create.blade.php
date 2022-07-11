@@ -12,49 +12,10 @@
                     @csrf
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
-<<<<<<< HEAD
                             <label for="id_supplier" class="block font-medium text-sm text-gray-700">Nama</label>
                             <input type="text" name="id_supplier" id="id_supplier" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('id_supplier', '') }}" />
                             @error('id_supplier')
-=======
-                            <label for="user_id" class="block font-medium text-sm text-gray-700">ID USER</label>
-                            <input type="text" name="user_id" id="user_id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('user_id', '') }}" />
-                            @error('user_id')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="name" class="block font-medium text-sm text-gray-700">Nama</label>
-                            <input type="text" name="name" id="name" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('name', '') }}" />
-                            @error('name')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="username" class="block font-medium text-sm text-gray-700">Username</label>
-                            <input type="text" name="username" id="username" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('username', '') }}" />
-                            @error('username')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="password" class="block font-medium text-sm text-gray-700">Password</label>
-                            <input type="text" name="password" id="password" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('password', '') }}" />
-                            @error('password')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="role_id" class="block font-medium text-sm text-gray-700">ID Role</label>
-                            <input type="text" name="role_id" id="role_id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('role_id', '') }}" />
-                            @error('role_id')
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -94,8 +55,4 @@
         </div>
     </div>
 
-<<<<<<< HEAD
 </x-app-layout>
-=======
-</x-app-layout>
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633

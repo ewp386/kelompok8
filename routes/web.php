@@ -43,11 +43,9 @@ Route::middleware([
     Route::resource('gudang', GudangController::class);
     Route::resource('supplier', SupplierController::class);
     Route::resource('order', OrderController::class);
-    // Route::resource('orderitem', OrderItemController::class);
     Route::resource('user', UserController::class);
     Route::resource('role', RoleController::class);
     Route::resource('transaksi', TransaksiController::class);
-    // Route::resource('transaksiitem', TransaksiItemController::class);
     Route::resource('retail', RetailController::class);
     Route::resource('kategori', KategoriController::class);
     Route::resource('manufaktur', ManufakturController::class);

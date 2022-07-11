@@ -16,18 +16,12 @@ class SupplierController extends Controller
      */
     public function index(Request $request)
     {
-<<<<<<< HEAD
         if($request->has('search')){
             $supplier = Supplier::where('id_supplier','LIKE','%' .$request->search.'%')->paginate(5);
         }else{
             $supplier = Supplier::paginate(5);
         }
             return view('supplier.index',compact('supplier')); 
-=======
-        $supplier = Supplier::all();
-
-        return view('supplier.index', compact('supplier'));
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
 
     /**
@@ -48,11 +42,7 @@ class SupplierController extends Controller
      */
     public function store(StoreSupplierRequest $request)
     {
-<<<<<<< HEAD
         
-=======
-
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
         Supplier::create($request->all());
         return redirect()->route('supplier.index');
     }

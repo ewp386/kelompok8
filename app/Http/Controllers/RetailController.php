@@ -16,18 +16,12 @@ class RetailController extends Controller
      */
     public function index(Request $request)
     {
-<<<<<<< HEAD
         if($request->has('search')){
             $retail = Retail::where('name','LIKE','%' .$request->search.'%')->paginate(5);
         }else{
             $retail = Retail::paginate(5);
         }
             return view('retail.index',compact('retail')); 
-=======
-        $retail = Retail::all();
-
-        return view('retail.index', compact('retail'));
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     }
 
     /**
@@ -48,11 +42,7 @@ class RetailController extends Controller
      */
     public function store(StoreRetailRequest $request)
     {
-<<<<<<< HEAD
         
-=======
-
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
         Retail::create($request->all());
         return redirect()->route('retail.index');
     }
@@ -86,11 +76,7 @@ class RetailController extends Controller
      * @param  \App\Models\retail  $retail
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
     public function update(UpdateRetailRequest $request, retail $retail)
-=======
-    public function update(UpdateRetailRequest $request, Retail $retail)
->>>>>>> d7a2dbf885026ab73f8e13b0e0e83ccd4b2cb633
     {
         $retail->update($request->all());
         return redirect()->route('retail.index');
