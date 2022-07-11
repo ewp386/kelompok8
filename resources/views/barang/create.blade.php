@@ -64,10 +64,10 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="notelpon" class="block font-medium text-sm text-gray-700">Stok</label>
-                            <input type="text" name="notelpon" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('notelpon', '') }}" />
-                            @error('notelpon')
+                            <label for="jumlah" class="block font-medium text-sm text-gray-700">Stok</label>
+                            <input type="text" name="jumlah" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('jumlah', '') }}" />
+                            @error('jumlah')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
