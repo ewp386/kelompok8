@@ -11,36 +11,27 @@
                 <form method="post" action="{{ route('gudang.update', $gudang->id) }}">
                     @csrf
                     @method('PUT')
-                    <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="user_id" class="block font-medium text-sm text-gray-700">ID User</label>
-                            <input type="text" name="user_id" id="user_id" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('user_id', $gudang->user_id) }}" />
-                            @error('user_id')
+                            <label for="id_gudang" class="block font-medium text-sm text-gray-700">Nama</label>
+                            <input type="text" name="id_gudang" id="id_gudang" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('id_gudang', $gudang->id_gudang) }}" />
+                            @error('id_gudang')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_product" class="block font-medium text-sm text-gray-700">ID Product</label>
-                            <input type="text" name="id_product" id="id_product" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_product', $gudang->id_product) }}" />
-                            @error('id_product')
+                            <label for="lokasi" class="block font-medium text-sm text-gray-700">lokasi</label>
+                            <input type="text" name="lokasi" id="lokasi" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('lokasi', $gudang->lokasi) }}" />
+                            @error('lokasi')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_transaksi" class="block font-medium text-sm text-gray-700">ID Transaksi</label>
-                            <input type="text" name="id_transaksi" id="id_transaksi" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_transaksi', $gudang->id_transaksi) }}" />
-                            @error('id_transaksi')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="quantity" class="block font-medium text-sm text-gray-700">Quantity</label>
-                            <input type="text" name="quantity" id="quantity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('quantity', $gudang->user_id) }}" />
-                            @error('quantity')
+                            <label for="notelpon" class="block font-medium text-sm text-gray-700">Stok</label>
+                            <input type="text" name="notelpon" id="notelpon" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('notelpon', $gudang->notelpon) }}" />
+                            @error('notelpon')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

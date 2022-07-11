@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Daftar Gudang
+            Daftar gudang
         </h2>
     </x-slot>
 
@@ -9,6 +9,12 @@
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="block mb-8">
                 <a href="{{ route('gudang.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tambah gudang</a>
+            </div>
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                  <form action="/gudang" method="GET">
+                  <input type="search" id="inputPassword6" name="search" class="form-control" aria-describedby="passwordHelpInline">
+                  </form>
             </div>
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -18,42 +24,42 @@
                                 <thead>
                                 <tr>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        ID User
+                                        ID 
                                     </th>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        ID Product
+                                        Nama
                                     </th>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        ID Transaksi
+                                        Lokasi
                                     </th>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Quantity
+                                        Stok
                                     </th>
-                                    
+
                                     <th scope="col" width="200" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Aksi
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
+                                    @php
+                                    $no=1;
+                                    @endphp
                                 @foreach ($gudang as $gudangs)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $gudangs->user_id }}
+                                            {{ $no++ }}
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $gudangs->id_product }}
+                                            {{ $gudangs->id_gudang }}
                                         </td>
-
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $gudangs->id_transaksi }}
+                                            {{ $gudangs->lokasi }}
                                         </td>
-
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $gudangs->quantity }}
+                                            {{ $gudangs->notelpon }}
                                         </td>
-                                       
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                             <a href="{{ route('gudang.edit', $gudangs->id) }}" class="text-indigo-600 hover:text-indigo-900 mb-2 mr-2">Edit</a>
                                             <form class="inline-block" action="{{ route('gudang.destroy', $gudangs->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
@@ -66,6 +72,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            {{ $gudang->links() }}
                         </div>
                     </div>
                 </div>

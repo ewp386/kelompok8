@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBarangRequest;
 use App\Http\Requests\UpdateBarangRequest;
 use App\Models\Barang;
+use App\Models\Gudang;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -14,21 +16,26 @@ class BarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $barang = Barang::all();
-
-        return view('barang.index', compact('barang'));
+        if($request->has('search')){
+            $barang = Barang::where('name','LIKE','%' .$request->search.'%')->with(['supplier','gudang'])->paginate(5);
+        }else{
+            $barang = Barang::with(['supplier','gudang'])->paginate(5);
+        }
+        
+            return view('barang.index',compact('barang')); 
     }
-
-    /**
+    /*
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {   
-        return view('barang.create');
+        $supplier = Supplier::all();
+        $gudang = Gudang::all();
+        return view('barang.create', compact(['supplier','gudang']));
     }
 
     /**
@@ -63,7 +70,9 @@ class BarangController extends Controller
      */
     public function edit(Barang $barang)
     {
-        return view('barang.edit', compact('barang'));
+        $supplier = Supplier::all();
+        $gudang = Gudang::all();
+        return view('barang.edit', compact(['barang','supplier', 'gudang']));
     }
 
     /**
@@ -76,7 +85,7 @@ class BarangController extends Controller
     public function update(UpdateBarangRequest $request, Barang $barang)
     {
         $barang->update($request->all());
-
+        
         return redirect()->route('barang.index');
     }
 

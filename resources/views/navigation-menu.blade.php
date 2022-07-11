@@ -16,31 +16,104 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+               
+                @if (Auth::user()->role_id == '1')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('barang.index') }}" :active="request()->routeIs('barang.index')">
                         {{ __('Barang') }}
                     </x-jet-nav-link>
-                </div>
+                </div>   
+                @elseif  (Auth::user()->role_id == '3')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('barang.index') }}" :active="request()->routeIs('barang.index')">
+                        {{ __('Barang') }}
+                    </x-jet-nav-link>
+                </div>               
+                @endforelse
+                               
+                @if (Auth::user()->role_id == '1')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('supplier.index') }}" :active="request()->routeIs('supplier.index')">
                         {{ __('Supplier') }}
                     </x-jet-nav-link>
-                </div>
+                </div>   
+                @elseif  (Auth::user()->role_id == '3')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('supplier.index') }}" :active="request()->routeIs('supplier.index')">
+                        {{ __('Supplier') }}
+                    </x-jet-nav-link>
+                </div>               
+                @endforelse
+                
+                @if (Auth::user()->role_id == '1')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('retail.index') }}" :active="request()->routeIs('retail.index')">
+                        {{ __('Retail') }}
+                    </x-jet-nav-link>
+                </div>   
+                @elseif  (Auth::user()->role_id == '3')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('retail.index') }}" :active="request()->routeIs('retail.index')">
+                        {{ __('Retail') }}
+                    </x-jet-nav-link>
+                </div>               
+                @endforelse
+
+                @if (Auth::user()->role_id == '1')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('gudang.index') }}" :active="request()->routeIs('gudang.index')">
                         {{ __('Gudang') }}
                     </x-jet-nav-link>
-                </div>
+                </div>   
+                @elseif  (Auth::user()->role_id == '3')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('manufaktur.index') }}" :active="request()->routeIs('manufaktur.index')">
-                        {{ __('Manufaktur') }}
+                    <x-jet-nav-link href="{{ route('gudang.index') }}" :active="request()->routeIs('gudang.index')">
+                        {{ __('Gudang') }}
                     </x-jet-nav-link>
-                </div>
+                </div>               
+                @endforelse
+
+                @if (Auth::user()->role_id == '1')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('transaksi.index') }}" :active="request()->routeIs('transaksi.index')">
                         {{ __('Transaksi') }}
                     </x-jet-nav-link>
-                </div>
+                </div>   
+                @elseif  (Auth::user()->role_id == '1')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('transaksi.index') }}" :active="request()->routeIs('transaksi.index')">
+                        {{ __('Transaksi') }}
+                    </x-jet-nav-link>
+                </div>               
+                @endforelse
+                
+                @if (Auth::user()->role_id == '1')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('order.index') }}" :active="request()->routeIs('order.index')">
+                        {{ __('Order') }}
+                    </x-jet-nav-link>
+                </div>   
+                @elseif  (Auth::user()->role_id == '1')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('order.index') }}" :active="request()->routeIs('order.index')">
+                        {{ __('Order') }}
+                    </x-jet-nav-link>
+                </div>               
+                @endforelse
+                @if (Auth::user()->role_id == '1')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
+                        {{ __('User') }}
+                    </x-jet-nav-link>
+                </div>   
+                @elseif  (Auth::user()->role_id == '1')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
+                        {{ __('User') }}
+                    </x-jet-nav-link>
+                </div>               
+                @endforelse
+               
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

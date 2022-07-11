@@ -15,10 +15,7 @@ class CreateRetailsTable extends Migration
     {
         Schema::create('retails', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('username');
-            $table->integer('password');
-            $table->bigInteger('role_id');
+            $table->string('id_retail');
             $table->string('email');
             $table->bigInteger('notelpon');
             $table->string('alamat');

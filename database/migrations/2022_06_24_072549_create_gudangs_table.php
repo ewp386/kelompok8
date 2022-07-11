@@ -15,9 +15,8 @@ class CreateGudangsTable extends Migration
     {
         Schema::create('gudangs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->string('id_product');
-            $table->bigInteger('id_transaksi');
+            $table->string('id_gudang');
+            $table->string('lokasi');
             $table->bigInteger('quantity');
             $table->timestamps();
             $table->softDeletes();

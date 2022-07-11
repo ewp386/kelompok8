@@ -14,11 +14,14 @@ class GudangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $gudang = Gudang::all();
-
-        return view('gudang.index', compact('gudang'));
+        if($request->has('search')){
+            $gudang = Gudang::where('name','LIKE','%' .$request->search.'%')->paginate(5);
+        }else{
+            $gudang = Gudang::paginate(5);
+        }
+            return view('gudang.index',compact('gudang')); 
     }
 
     /**

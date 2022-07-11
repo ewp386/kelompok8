@@ -7,11 +7,11 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ManufakturController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\RetailController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransaksiController;
-use App\Http\Controllers\TransaksiItemController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,13 +26,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
 Route::middleware([
     'auth:sanctum',
-    config('jetstream.auth_session'),
+    'admin',
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
@@ -43,10 +43,11 @@ Route::middleware([
     Route::resource('gudang', GudangController::class);
     Route::resource('supplier', SupplierController::class);
     Route::resource('order', OrderController::class);
-    Route::resource('orderitem', OrderItemController::class);
-    Route::resource('admin', AdminController::class);
+    // Route::resource('orderitem', OrderItemController::class);
+    Route::resource('user', UserController::class);
+    Route::resource('role', RoleController::class);
     Route::resource('transaksi', TransaksiController::class);
-    Route::resource('transaksiitem', TransaksiItemController::class);
+    // Route::resource('transaksiitem', TransaksiItemController::class);
     Route::resource('retail', RetailController::class);
     Route::resource('kategori', KategoriController::class);
     Route::resource('manufaktur', ManufakturController::class);

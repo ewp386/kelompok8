@@ -16,11 +16,8 @@ class CreateTransaksisTable extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_retail');
-            $table->string('alamat');
             $table->string('pembayaran');
             $table->float('total_harga');
-            $table->float('shipping_harga');
-            $table->string('status');
             $table->timestamps();
             $table->softDeletes();
         });

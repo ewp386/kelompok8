@@ -7,8 +7,17 @@
 
     <div>
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
-            <div class="block mb-8">
-                <a href="{{ route('barang.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tambah Barang</a>
+            <div class="flex">
+             <div class="block mb-8">
+                 <a href="{{ route('barang.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tambah Barang</a>
+             </div>
+
+            </div>
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                  <form action="/barang" method="GET">
+                  <input type="search" id="inputPassword6" name="search" class="form-control" aria-describedby="passwordHelpInline">
+                  </form>
             </div>
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -24,32 +33,33 @@
                                         Nama
                                     </th>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Harga
+                                        Harga/$
                                     </th>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Quantity
+                                        Kode Gudang
                                     </th>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Id User
+                                        Supplier
                                     </th>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Id Kategori
+                                        Kategori
                                     </th>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Stock
-                                    </th>
-
-                                    
+                                        Stok
+                                    </th>   
                                     <th scope="col" width="200" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Aksi
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
+                                @php
+                                $no=1;
+                                @endphp
                                 @foreach ($barang as $barangs)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $barangs->id_barang }}
+                                            {{ $no++ }}
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -61,19 +71,19 @@
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $barangs->quantity }}
+                                            {{ $barangs->gudang->id_gudang }}
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $barangs->user_id }}
+                                            {{ $barangs->supplier->id_supplier }}
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $barangs->id_kategori }}
+                                            {{ $barangs->kategori }}
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $barangs->stock }}
+                                            {{ $barangs->notelpon }}
                                         </td>
 
                                        
@@ -89,6 +99,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            {{ $barang->links() }}
                         </div>
                     </div>
                 </div>

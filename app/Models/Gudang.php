@@ -10,6 +10,10 @@ class Gudang extends Model
     use HasFactory;
     protected $table = 'gudangs';
     protected $fillable = [
-        'user_id', 'id_product', 'id_transaksi', 'quantity',
+        'id_gudang', 'lokasi', 'notelpon',
     ];
+    public function barang()
+    {
+        return $this->hasMany(Barang::class);
+    }
 }

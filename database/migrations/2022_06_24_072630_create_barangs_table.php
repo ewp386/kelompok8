@@ -17,10 +17,10 @@ class CreateBarangsTable extends Migration
             $table->id();
             $table->string('name');
             $table->float('harga');
-            $table->integer('quantity');
-            $table->bigInteger('user_id');
-            $table->bigInteger('id_kategori');
-            $table->integer('stock')->nullable();
+            $table->integer('id_gudang');
+            $table->bigInteger('id_supplier');
+            $table->string('kategori');
+            $table->integer('stok');
             $table->timestamps();
             $table->softDeletes();
         });

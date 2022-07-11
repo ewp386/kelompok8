@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Order;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,11 +14,16 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->has('search')){
+            $order = Order::where('name','LIKE','%' .$request->search.'%')->with('supplier')->paginate(5);
+        }else{
+            $order = Order::with('supplier')->paginate(5);
+        }
+        
+            return view('order.index',compact('order')); 
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +31,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $supplier = Supplier::all();
+        return view('order.create', compact('supplier'));
     }
 
     /**
@@ -35,7 +43,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Order::create($request->all());
+        return redirect()->route('order.index');
     }
 
     /**
@@ -46,7 +55,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        return view('order.show', compact('order'));
     }
 
     /**
@@ -57,7 +66,8 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        //
+        $supplier = Supplier::all();;
+        return view('order.edit', compact('supplier', 'order'));
     }
 
     /**
@@ -67,9 +77,10 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(UpdateOrderRequest $request, Order $order)
     {
-        //
+        $order->update($request->all());
+        return redirect()->route('order.index');
     }
 
     /**
@@ -80,6 +91,7 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        $order->delete();
+        return redirect()->route('order.index');
     }
 }

@@ -21,7 +21,7 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="harga" class="block font-medium text-sm text-gray-700">Harga</label>
+                            <label for="harga" class="block font-medium text-sm text-gray-700">Harga/$</label>
                             <input type="text" name="harga" id="harga" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('harga', $barang->harga) }}" />
                             @error('harga')
@@ -29,34 +29,46 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="quantity" class="block font-medium text-sm text-gray-700">Quantity</label>
-                            <input type="text" name="quantity" id="quantity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('quantity', $barang->quantity) }}" />
-                            @error('quantity')
+                            <label for="id_gudang" class="block font-medium text-sm text-gray-700">Kode Gudang</label>
+                            <select class="form-control select" style="width: 100%" name="id_gudang" id="id_gudang">
+                                <option disabled value>Pilih Gudang</option>
+                                @foreach ($gudang as $barang )
+                                <option value="{{ $barang->id }}" selected>{{  $barang->id_gudang }}</option>                                    
+                                @endforeach
+                            </select> 
+                            @error('id_gudang')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_user" class="block font-medium text-sm text-gray-700">ID User</label>
-                            <input type="text" name="id_user" id="quantity" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_user', $barang->user_id) }}" />
-                            @error('id_user')
+                            <label for="id_supplier" class="block font-medium text-sm text-gray-700">Supplier</label>
+                            <select class="form-control select" style="width: 100%" name="id_supplier" id="id_supplier">
+                                <option disabled value>Pilih Gudang</option>
+                                @foreach ($supplier as $barang )
+                                <option value="{{ $barang->id }}" selected>{{  $barang->id_supplier }}</option>                                    
+                                @endforeach
+                            </select> 
+                            @error('id_supplier')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="id_kategori" class="block font-medium text-sm text-gray-700">ID Kategori</label>
-                            <input type="text" name="id_kategori" id="id_kategori" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('id_kategori', $barang->id_kategori) }}" />
-                            @error('id_kategori')
+                            <label for="kategori" class="block font-medium text-sm text-gray-700">ID Kategori</label>
+                            <select name="kategori" id="description" class="form-input rounded-md shadow-sm mt-1 block w-full">
+                                <option value="Smartphone">Smartphone</option>
+                                <option value="PC">PC</option>
+                                <option value="AC">AC</option>
+                                <option value="TV">TV</option>
+                            </select>
+                            @error('kategori')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="stock" class="block font-medium text-sm text-gray-700">Stock</label>
-                            <input type="text" name="stock" id="stock" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('stock', $barang->stock) }}" />
-                            @error('id_kategori')
+                            <label for="notelpon" class="block font-medium text-sm text-gray-700">Stok</label>
+                            <input type="text" name="notelpon" id="notelpon" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('notelpon', $barang->notelpon) }}" />
+                            @error('notelpon')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
