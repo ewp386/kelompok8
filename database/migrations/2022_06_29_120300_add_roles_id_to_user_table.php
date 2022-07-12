@@ -14,7 +14,7 @@ class AddRolesIdToUserTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->bigInteger('roles_id')->default('2')->after('email');
+            $table->bigInteger('role_id')->default('2')->after('email');
         });
     }
 
@@ -26,7 +26,7 @@ class AddRolesIdToUserTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->bigInteger('roles_id')->default('2')->after('email');
+            $table->bigInteger('role_id')->default('2')->after('email');
         });
     }
 }
