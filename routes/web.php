@@ -12,6 +12,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +28,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    dd(User::all(), Role::all());
+
+    // return view('auth.login');
 });
 
 
