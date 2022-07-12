@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class RolesTable extends Seeder
@@ -21,5 +22,17 @@ class RolesTable extends Seeder
             ]);
         }
         
+        User::create([
+            'name' => 'Administrator',
+            'email' => 'admin@admin.com',
+            'password' => 'admin123',
+            'role_id' => '1'
+        ]);
+        User::create([
+            'name' => 'Staff',
+            'email' => 'staff@admin.com',
+            'password' => 'staff123',
+            'role_id' => '3'
+        ]);
     }
 }
