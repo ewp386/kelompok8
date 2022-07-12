@@ -72,6 +72,7 @@ class BarangController extends Controller
     {
         $supplier = Supplier::all();
         $gudang = Gudang::all();
+        
         return view('barang.edit', compact(['barang','supplier', 'gudang']));
     }
 

@@ -32,8 +32,8 @@
                             <label for="id_gudang" class="block font-medium text-sm text-gray-700">Kode Gudang</label>
                             <select class="form-control select" style="width: 100%" name="id_gudang" id="id_gudang">
                                 <option disabled value>Pilih Gudang</option>
-                                @foreach ($gudang as $barang )
-                                <option value="{{ $barang->id }}" selected>{{  $barang->id_gudang }}</option>                                    
+                                @foreach ($gudang as $value )
+                                <option value="{{ $value->id }}" selected>{{  $value->id_gudang }}</option>                                    
                                 @endforeach
                             </select> 
                             @error('id_gudang')
@@ -44,8 +44,8 @@
                             <label for="id_supplier" class="block font-medium text-sm text-gray-700">Supplier</label>
                             <select class="form-control select" style="width: 100%" name="id_supplier" id="id_supplier">
                                 <option disabled value>Pilih Gudang</option>
-                                @foreach ($supplier as $barang )
-                                <option value="{{ $barang->id }}" selected>{{  $barang->id_supplier }}</option>                                    
+                                @foreach ($supplier as $value )
+                                <option value="{{ $value->id }}" selected>{{  $value->id_supplier }}</option>                                    
                                 @endforeach
                             </select> 
                             @error('id_supplier')
