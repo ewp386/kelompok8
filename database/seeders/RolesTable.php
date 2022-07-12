@@ -14,8 +14,12 @@ class RolesTable extends Seeder
      */
     public function run()
     {
-        Role::create([
-            'role_id'	=> 'Admin'
-        ]);
+        $roles = ['Admin', 'Visitor', 'Staff'];
+        foreach ($roles as $value) {
+            Role::create([
+                'role_id'	=> $value
+            ]);
+        }
+        
     }
 }
