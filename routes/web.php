@@ -49,9 +49,7 @@ Route::middleware([
     Route::resource('role', RoleController::class);
     Route::resource('transaksi', TransaksiController::class);
     Route::resource('retail', RetailController::class);
-    Route::resource('kategori', KategoriController::class);
-    Route::resource('manufaktur', ManufakturController::class);
-    Route::resource('invoice', InvoiceController::class);
+
 
 
 });

@@ -25,7 +25,14 @@ class Admin
        }
        else if (Auth::user() && Auth::user()->role_id == '3') {
         return $next($request);
-       } else {
+       } 
+       else if (Auth::user() && Auth::user()->role_id == '4') {
+        return $next($request);
+       } 
+       else if (Auth::user() && Auth::user()->role_id == '5') {
+        return $next($request);
+       }
+       else {
         return redirect('/');
        }
 
