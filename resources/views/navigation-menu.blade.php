@@ -73,6 +73,9 @@
                     <x-jet-nav-link href="{{ route('supplier.index') }}" :active="request()->routeIs('supplier.index')">
                         {{ __('Supplier') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('order.index') }}" :active="request()->routeIs('order.index')">
+                        {{ __('Order') }}
+                    </x-jet-nav-link>
 
                 </div>
 
@@ -81,6 +84,9 @@
                 
                     <x-jet-nav-link href="{{ route('retail.index') }}" :active="request()->routeIs('retail.index')">
                         {{ __('Retail') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('transaksi.index') }}" :active="request()->routeIs('transaksi.index')">
+                        {{ __('Transaksi') }}
                     </x-jet-nav-link>
 
                 </div>   
