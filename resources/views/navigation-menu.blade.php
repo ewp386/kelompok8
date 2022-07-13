@@ -35,16 +35,15 @@
                         {{ __('Gudang') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
-                        {{ __('User') }}
-                    </x-jet-nav-link>
-
                     <x-jet-nav-link href="{{ route('order.index') }}" :active="request()->routeIs('order.index')">
                         {{ __('Order') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{ route('transaksi.index') }}" :active="request()->routeIs('transaksi.index')">
                         {{ __('Transaksi') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
+                        {{ __('User') }}
                     </x-jet-nav-link>
 
                 </div>   
