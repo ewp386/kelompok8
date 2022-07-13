@@ -27,10 +27,10 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="stok" class="block font-medium text-sm text-gray-700">No telpon</label>
-                            <input type="text" name="stok" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('stok', '') }}" />
-                            @error('stok')
+                            <label for="notelpon" class="block font-medium text-sm text-gray-700">No telpon</label>
+                            <input type="text" name="notelpon" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('notelpon', '') }}" />
+                            @error('notelpon')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
