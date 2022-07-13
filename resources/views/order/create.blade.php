@@ -44,7 +44,7 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="jumlah" class="block font-medium text-sm text-gray-700">Stok</label>
+                            <label for="jumlah" class="block font-medium text-sm text-gray-700">Total Harga/$</label>
                             <input type="text" name="jumlah" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('jumlah') }}" />
                             @error('jumlah')
