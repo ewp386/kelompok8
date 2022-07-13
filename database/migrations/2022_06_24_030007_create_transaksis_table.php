@@ -17,7 +17,7 @@ class CreateTransaksisTable extends Migration
             $table->id();
             $table->bigInteger('id_retail');
             $table->string('pembayaran');
-            $table->float('total_harga');
+            $table->float('jumlah');
             $table->timestamps();
             $table->softDeletes();
         });

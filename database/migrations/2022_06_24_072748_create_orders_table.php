@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('id_supplier');
             $table->string('date');;
             $table->string('status');
-            $table->string('total_harga');
+            $table->string('jumlah');
             $table->timestamps();
             $table->softDeletes();
         });

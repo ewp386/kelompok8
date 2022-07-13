@@ -20,7 +20,7 @@ class CreateBarangsTable extends Migration
             $table->integer('id_gudang');
             $table->bigInteger('id_supplier');
             $table->string('kategori');
-            $table->integer('stok');
+            $table->integer('jumlah');
             $table->timestamps();
             $table->softDeletes();
         });

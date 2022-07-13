@@ -16,11 +16,19 @@
                             <label for="id_supplier" class="block font-medium text-sm text-gray-700">Supplier</label>
                             <select class="form-control select" style="width: 100%" name="id_supplier" id="id_supplier">
                                 <option disabled value>Pilih Supplier</option>
-                                @foreach ($supplier as $order )
-                                <option value="{{ $order->id }}">{{  $order->id_supplier }}</option>                                    
+                                @foreach ($supplier as $data )
+                                <option value="{{ $data->id }}" {{ $data->id == $order->id_supplier ? 'selected' : '' }}>{{  $data->id_supplier }}</option>                                    
                                 @endforeach
                             </select>
                             @error('id_supplier')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="tanggal" class="block font-medium text-sm text-gray-700">tanggal</label>
+                            <input type="date" name="tanggal" id="tanggal" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('tanggal', $order->tanggal) }}" />
+                            @error('tanggal')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -28,9 +36,9 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="status" class="block font-medium text-sm text-gray-700">Status</label>
                             <select name="status" id="description" class="form-input rounded-md shadow-sm mt-1 block w-full">
-                                <option value="Batal">Batal</option>
-                                <option value="Berhasil">Berhasil</option>
-                                <option value="Sedang diproses">Sedang diproses</option>
+                                <option value="Batal" {{ $order->status == 'Batal' ? 'selected' : '' }}>Batal</option>
+                                <option value="Berhasil" {{ $order->status == 'Berhasil' ? 'selected' : '' }}>Berhasil</option>
+                                <option value="Sedang diproses" {{ $order->status == 'Sedang diproses' ? 'selected' : '' }}>Sedang diproses</option>
                             </select>
                             @error('status')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
@@ -38,7 +46,7 @@
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="jumlah" class="block font-medium text-sm text-gray-700">Stok</label>
-                            <input type="number" name="jumlah" id="jumlah" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                            <input type="text" name="jumlah" id="jumlah" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('jumlah', $order->jumlah) }}" />
                             @error('jumlah')
                                 <p class="text-sm text-red-600">{{ $message }}</p>

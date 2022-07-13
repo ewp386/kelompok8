@@ -33,7 +33,7 @@
                             <select class="form-control select" style="width: 100%" name="id_gudang" id="id_gudang">
                                 <option disabled value>Pilih Gudang</option>
                                 @foreach ($gudang as $value )
-                                <option value="{{ $value->id }}" selected>{{  $value->id_gudang }}</option>                                    
+                                <option value="{{ $value->id }}"  {{ $value->id == $barang->id_gudang ? 'selected' : '' }}>{{  $value->id_gudang }}</option>                                    
                                 @endforeach
                             </select> 
                             @error('id_gudang')
@@ -45,7 +45,7 @@
                             <select class="form-control select" style="width: 100%" name="id_supplier" id="id_supplier">
                                 <option disabled value>Pilih Gudang</option>
                                 @foreach ($supplier as $value )
-                                <option value="{{ $value->id }}" selected>{{  $value->id_supplier }}</option>                                    
+                                <option value="{{ $value->id }}"  {{ $value->id == $barang->id_supplier ? 'selected' : '' }}>{{  $value->id_supplier }}</option>                                    
                                 @endforeach
                             </select> 
                             @error('id_supplier')
@@ -55,10 +55,10 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="kategori" class="block font-medium text-sm text-gray-700">ID Kategori</label>
                             <select name="kategori" id="description" class="form-input rounded-md shadow-sm mt-1 block w-full">
-                                <option value="Smartphone">Smartphone</option>
-                                <option value="PC">PC</option>
-                                <option value="AC">AC</option>
-                                <option value="TV">TV</option>
+                                <option value="Smartphone" {{ $barang->kategori == 'Smartphone' ? 'selected' : '' }}>Smartphone</option>
+                                <option value="PC"{{ $barang->kategori == 'PC' ? 'selected' : '' }}>PC</option>
+                                <option value="AC"{{ $barang->kategori == 'AC' ? 'selected' : '' }}>AC</option>
+                                <option value="TV"{{ $barang->kategori == 'TV' ? 'selected' : '' }}>TV</option>
                             </select>
                             @error('kategori')
                                 <p class="text-sm text-red-600">{{ $message }}</p>

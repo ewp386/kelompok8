@@ -17,7 +17,7 @@ class CreateSuppliersTable extends Migration
             $table->id('id');
             $table->string('id_supplier');
             $table->string('email');
-            $table->integer('notelpon');
+            $table->string('notelpon');
             $table->string('alamat');
             $table->timestamps();
             $table->softDeletes();

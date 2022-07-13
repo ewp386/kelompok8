@@ -28,7 +28,7 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="notelpon" class="block font-medium text-sm text-gray-700">No telpon</label>
+                            <label for="notelpon" class="block font-medium text-sm text-gray-700">No Telpon</label>
                             <input type="text" name="notelpon" id="notelpon" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('notelpon', $gudang->notelpon) }}" />
                             @error('notelpon')

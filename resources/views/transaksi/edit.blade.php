@@ -16,8 +16,8 @@
                             <label for="id_retail" class="block font-medium text-sm text-gray-700">Retail</label>
                             <select class="form-control select" style="width: 100%" name="id_retail" id="id_gudang">
                                 <option disabled value>Pilih Retail</option>
-                                @foreach ($retail as $transaksi )
-                                <option value="{{ $transaksi->id }}" selected>{{  $transaksi->id_retail }}</option>                                    
+                                @foreach ($retail as $data )
+                                <option value="{{ $data->id }}" selected>{{  $data->id_retail }}</option>                                    
                                 @endforeach
                             </select> 
                             @error('id_retail')
@@ -35,10 +35,10 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="total_harga" class="block font-medium text-sm text-gray-700">Total Harga/$</label>
-                            <input type="text" name="total_harga" id="total_harga" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('total_harga', $transaksi->total_harga) }}" />
-                            @error('total_harga')
+                            <label for="jumlah" class="block font-medium text-sm text-gray-700">Stok</label>
+                            <input type="text" name="jumlah" id="jumlah" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('jumlah', $transaksi->jumlah) }}" />
+                            @error('jumlah')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

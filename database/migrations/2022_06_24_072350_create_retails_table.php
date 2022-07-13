@@ -17,7 +17,7 @@ class CreateRetailsTable extends Migration
             $table->id();
             $table->string('id_retail');
             $table->string('email');
-            $table->bigInteger('notelpon');
+            $table->string('notelpon');
             $table->string('alamat');
             $table->timestamps();
             $table->softDeletes();
