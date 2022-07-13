@@ -17,7 +17,7 @@ class GudangController extends Controller
     public function index(Request $request)
     {
         if($request->has('search')){
-            $gudang = Gudang::where('name','LIKE','%' .$request->search.'%')->paginate(5);
+            $gudang = Gudang::where('id_gudang','LIKE','%' .$request->search.'%')->paginate(5);
         }else{
             $gudang = Gudang::paginate(5);
         }

@@ -17,7 +17,7 @@
                             <select class="form-control select" style="width: 100%" name="id_retail" id="id_gudang">
                                 <option disabled value>Pilih Retail</option>
                                 @foreach ($retail as $data )
-                                <option value="{{ $data->id }}" selected>{{  $data->id_retail }}</option>                                    
+                                <option value="{{ $data->id }}" {{ $data->id == $transaksi->id_retail ? 'selected' : '' }}>{{  $data->id_retail }}</option>                                    
                                 @endforeach
                             </select> 
                             @error('id_retail')
@@ -27,8 +27,8 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="pembayaran" class="block font-medium text-sm text-gray-700">Pembayaran</label>
                             <select name="pembayaran" id="description" class="form-input rounded-md shadow-sm mt-1 block w-full">
-                                <option value="Lunas">Lunas</option>
-                                <option value="Belum Lunas">Belum Lunas</option>
+                                <option value="Lunas"{{ $transaksi->pembayaran == 'Lunas' ? 'selected' : '' }}>Lunas</option>
+                                <option value="Belum Lunas"{{ $transaksi->pembayaran == 'Belum Lunas' ? 'selected' : '' }}>Belum Lunas</option>
                             </select>
                             @error('pembayaran')
                                 <p class="text-sm text-red-600">{{ $message }}</p>

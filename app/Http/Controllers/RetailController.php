@@ -17,7 +17,7 @@ class RetailController extends Controller
     public function index(Request $request)
     {
         if($request->has('search')){
-            $retail = Retail::where('name','LIKE','%' .$request->search.'%')->paginate(5);
+            $retail = Retail::where('id_retail','LIKE','%' .$request->search.'%')->paginate(5);
         }else{
             $retail = Retail::paginate(5);
         }

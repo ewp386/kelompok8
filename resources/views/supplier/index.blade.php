@@ -8,7 +8,7 @@
     <div>
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="block mb-8">
-                <a href="{{ route('supplier.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tambah supplier</a>
+                <a href="{{ route('supplier.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tambah Supplier</a>
             </div>
             <div class="row g-3 align-items-center mt-2">
                 <div class="col-auto">

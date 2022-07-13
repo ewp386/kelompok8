@@ -9,7 +9,7 @@
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
            <div class="flex">
             <div class="block mb-8">
-                <a href="{{ route('user.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tambah user</a>
+                <a href="{{ route('user.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tambah User</a>
             </div>
             <div class="block mb-8 ml-2">
                 <a href="/role" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Role</a>

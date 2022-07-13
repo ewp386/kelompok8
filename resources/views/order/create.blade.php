@@ -34,7 +34,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="status" class="block font-medium text-sm text-gray-700">Status</label>
                             <select name="status" id="description" class="form-input rounded-md shadow-sm mt-1 block w-full">
-                                <option selected>Pilih Supplier</option>
+                                <option selected>Pilih Status</option>
                                 <option value="Batal">Batal</option>
                                 <option value="Berhasil">Berhasil</option>
                                 <option value="Sedang diproses">Sedang diproses</option>

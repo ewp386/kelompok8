@@ -18,7 +18,7 @@ class TransaksiController extends Controller
     public function index(Request $request)
     {
         if($request->has('search')){
-            $transaksi = Transaksi::where('name','LIKE','%' .$request->search.'%')->with('retail')->paginate(5);
+            $transaksi = Transaksi::where('id_retail','LIKE','%' .$request->search.'%')->with('retail')->paginate(5);
         }else{
             $transaksi = Transaksi::with('retail')->paginate(5);
         }

@@ -20,7 +20,7 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="lokasi" class="block font-medium text-sm text-gray-700">lokasi</label>
+                            <label for="lokasi" class="block font-medium text-sm text-gray-700">Lokasi</label>
                             <input type="text" name="lokasi" id="lokasi" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('lokasi', $gudang->lokasi) }}" />
                             @error('lokasi')
